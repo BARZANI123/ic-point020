@@ -1,20 +1,11 @@
 
 const { Client, Collection , MessageActionRow , MessageButton , MessageSelectMenu , Modal , TextInputComponent , MessageEmbed } = require("discord.js");
-
+let db = require('pro.db')
 const client = new Client({
   intents: 32767
 }).setMaxListeners(0);
 
-const db = require('multiple.db'); // npm i multiple.db
 
-// Connect to the database
-await db.connect('').catch((err) => {
-  console.log(err)
-})
-// This if Using Mongoose
-db.useMongoDB();
-
-db.delete
 
 
 
