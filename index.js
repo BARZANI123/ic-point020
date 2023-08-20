@@ -147,7 +147,7 @@ client.on('messageCreate' , async(message) => {
 client.on('messageCreate' , async(message) => {
   if(message.author.bot) return;
   if(message.channel.id != feedbackroom) return;
-      let role = message.guild.roles.cache.get("1132415108228853863")
+      let role = message.guild.roles.cache.get("1132415108010749978")
     message.member.roles.add(role)
   let user = message.mentions.members.first();
   if(message.author.id == user.id) return;
