@@ -1,13 +1,20 @@
 
 const { Client, Collection , MessageActionRow , MessageButton , MessageSelectMenu , Modal , TextInputComponent , MessageEmbed } = require("discord.js");
-let db = require('pro.db')
+
 const client = new Client({
   intents: 32767
 }).setMaxListeners(0);
 
+const db = require('multiple.db'); // npm i multiple.db
 
+// Connect to the database
+await db.connect('').catch((err) => {
+  console.log(err)
+})
+// This if Using Mongoose
+db.useMongoDB();
 
-      
+db.delete
 
 
 
@@ -67,10 +74,6 @@ console.log("Token Invalid")
 let co = "#f4b115"
 
 const line = "https://cdn.discordapp.com/attachments/980884096232345620/1112002341747564644/New_Element_Copy_569C7FE.gif"
-const lineof = ""
-const linetr = ""
-const linegi = ""
-const linene = ""
 
 
 ////Var Points Log
@@ -153,7 +156,7 @@ client.on('messageCreate' , async(message) => {
 client.on('messageCreate' , async(message) => {
   if(message.author.bot) return;
   if(message.channel.id != feedbackroom) return;
-      let role = message.guild.roles.cache.get("")
+      let role = message.guild.roles.cache.get("1132415108228853863")
     message.member.roles.add(role)
   let user = message.mentions.members.first();
   if(message.author.id == user.id) return;
