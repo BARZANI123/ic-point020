@@ -144,38 +144,6 @@ client.on('messageCreate' , async(message) => {
   }
 }) 
 
-client.on('messageCreate' , async(message) => {
-  if(message.author.bot) return;
-  if(message.channel.id != feedbackroom) return;
-      let role = message.guild.roles.cache.get("1132415108010749978")
-    message.member.roles.add(role)
-  let user = message.mentions.members.first();
-  if(message.author.id == user.id) return;
-  let pointSs = db.get(`points_${user.id}`)
-  if( pointSs == null) {
-      await db.set(`points_${user.id}` , {
-    userId : user.id,
-    count : 0
-  })
-  }
-  let points = db.get(`points_${user.id}`)
-  let poi = points.count
-  let po = Math.floor((poi * 1) + (7 * 1))
-  await db.set(`points_${user.id}` , {
-    userId : user.id,
-    count : po
-  })
-  db.add(`feedback_${user.id}` , 1)
-    message.guild.channels.cache.get(logroom2).send({embeds: [
-    new MessageEmbed()
-    .setColor(co)
-    .setTitle("New Notification")
-    .setDescription(`
-> New  Feedback Gived To : ${user}
-
-> By Client : ${message.author}`)
-  ]})
-}) 
 
 
 
