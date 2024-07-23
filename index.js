@@ -58,7 +58,7 @@ setInterval(restart, 60 * 1000);
                               
 const prefix = "$"
 
-client.login(`MTExNzQ1MTU1Mjc1NjYxNzI4Nw.GzYi96.77B0Bi4ymG1xRO_WlInZTmZGkbgst916GQlqro`).catch(() => {
+client.login(``).catch(() => {
 console.log("Token Invalid")
 })
 ////var
